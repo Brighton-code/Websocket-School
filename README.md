@@ -6,3 +6,4 @@ Verdieping Software repo over Websockets
 
 Een social feed van users.
 Een watsapp clone.
+Een Pictionary (later met GEO location)
