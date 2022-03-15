@@ -1,18 +1,19 @@
 {
-  "name": "websocket-school",
-  "version": "1.0.0",
-  "description": "Verdieping Software repo over Websockets",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server.js",
-    "devstart": "nodemon server.js"
-  },
-  "author": "Brighton van Rouendal",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "dependencies": {
-    "ws": "^8.5.0"
-  }
+	"name": "websocket-school",
+	"version": "1.0.0",
+	"description": "Verdieping Software repo over Websockets",
+	"main": "index.js",
+	"scripts": {
+		"start": "node server.js",
+		"devstart": "nodemon server.js",
+		"devstartPictionary": "nodemon ./src/pictionary/server.js"
+	},
+	"author": "Brighton van Rouendal",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	},
+	"dependencies": {
+		"ws": "^8.5.0"
+	}
 }
