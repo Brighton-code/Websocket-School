@@ -17,7 +17,7 @@ const wss = new WebSocket.Server({
 // 		});
 // 	});
 // });
-
+console.log(`Listening on port: ${PORT}`);
 let playerID = 0;
 let isDrawer = true;
 wss.on("connection", (client) => {
