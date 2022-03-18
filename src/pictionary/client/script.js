@@ -1,7 +1,12 @@
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
-const rect = canvas.getBoundingClientRect();
+let rect = canvas.getBoundingClientRect();
 let ws;
+
+window.addEventListener("resize", () => {
+	rect = canvas.getBoundingClientRect();
+});
+
 function init() {
 	if (ws) {
 		ws.onerror = ws.onopen = ws.onclose = null;
@@ -27,14 +32,11 @@ function init() {
 init();
 
 // Drawing area and logic
-
 let mouseDown = false;
 let prevData = { X: 0, Y: 0 };
-let color = "black";
 let lineWidth = 5;
 
 // Set context Styles
-context.strokeStyle = color;
 context.lineWidth = lineWidth;
 context.lineCap = "round";
 
@@ -49,8 +51,9 @@ canvas.addEventListener("mousedown", (e) => {
 		startY: e.clientY - rect.top,
 		endX: e.clientX - rect.left,
 		endY: e.clientY - rect.top,
-		color: color,
+		color: context.strokeStyle,
 		lineWidth: lineWidth,
+		time: new Date(),
 	};
 	ws.send(JSON.stringify(data));
 	prevData = {
@@ -73,8 +76,9 @@ canvas.addEventListener("mousemove", (e) => {
 			startY: prevData.Y - rect.top,
 			endX: e.clientX - rect.left,
 			endY: e.clientY - rect.top,
-			color: color,
+			color: context.strokeStyle,
 			lineWidth: lineWidth,
+			time: new Date(),
 		};
 		ws.send(JSON.stringify(data));
 
@@ -103,3 +107,17 @@ function draw(data) {
 	context.lineTo(data.endX, data.endY);
 	context.stroke();
 }
+
+const li = document.querySelectorAll("[data-colorHexadecimal]");
+li.forEach((e) => {
+	e.style.backgroundColor = e.dataset.colorhexadecimal;
+	if (e.dataset.selected === true) {
+		context.strokeStyle = e.dataset.colorhexadecimal;
+	}
+	e.addEventListener("click", (e) => {
+		console.log(e);
+		context.strokeStyle = e.target.dataset.colorhexadecimal;
+		document.querySelector("[data-selected=true]").dataset.selected = false;
+		e.target.dataset.selected = true;
+	});
+});
