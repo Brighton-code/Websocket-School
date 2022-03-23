@@ -11,44 +11,19 @@
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<!-- <body>
-    <div id="game-board">
-        <canvas id="drawing-board" style="width: 600px; height: 600px;"></canvas>
-        <div class="gues-area"></div>
-    </div>
-    <script src="script.js"></script>
-</body> -->
-
 <body>
 	<canvas width="600" height="600"></canvas>
 	<div class="controls">
+		<div style="display: flex; gap: 20px;">
+			<button type="button" id="sGame">Start Game</button>
+			<button type="button" id="eGame">End Game</button>
+		</div>
 		<ul>
 			<li class="color" data-colorHexadecimal="#000000" data-selected="true"></li>
 			<li class="color" data-colorHexadecimal="#FF0000" data-selected="false"></li>
 			<li class="color" data-colorHexadecimal="#0000FF" data-selected="false"></li>
 			<li class="color" data-colorHexadecimal="#FFFF00" data-selected="false"></li>
 		</ul>
-		<!-- <button id="revealColorSelect">New Color</button>
-		<div id="colorSelect">
-			<span id="newColor"></span>
-			<div class="sliders">
-				<p>
-					<label for="red">Red</label>
-					<input id="red" name="red" type="range" min=0 max=255 value=0>
-				</p>
-				<p>
-					<label for="green">Green</label>
-					<input id="green" name="green" type="range" min=0 max=255 value=0>
-				</p>
-				<p>
-					<label for="blue">Blue</label>
-					<input id="blue" name="blue" type="range" min=0 max=255 value=0>
-				</p>
-			</div>
-			<div>
-				<button id="addNewColor">Add Color</button>
-			</div>
-		</div> -->
 	</div>
 
 	<script src="script.js"></script>
