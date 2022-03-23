@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node server.js",
 		"devstart": "nodemon server.js",
-		"devstartPictionary": "nodemon ./src/pictionary/server.js"
+		"devpic": "nodemon ./src/pictionary/server.js"
 	},
 	"author": "Brighton van Rouendal",
 	"license": "ISC",
