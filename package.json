@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node server.js",
+		"pictionary": "node ./src/pictionary/server.js",
 		"devstart": "nodemon server.js",
 		"devpic": "nodemon ./src/pictionary/server.js"
 	},
